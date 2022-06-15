@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../App.css";
+import "../table.css";
 
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
@@ -20,28 +20,18 @@ import TableButtons from "./TableButtons";
 //     textBlock: {},
 //   }))
 
-var timestamp = new Date().getTime();
+// const today = Temporal.Now.plainDateTime("persian")
+// npm i @js-temporal/polyfill
+
 // potentially apply badge to header PAID
 const columns = [
 	{ field: "id", headerName: "Project #", type: "number", width: 70 },
-	// { field: "projectid", headerName: "Project #", type: "number", width: 70 },
-
 	{ field: "clientname", headerName: "Name & Client", width: 130 },
 	{ field: "paymentstatus", headerName: `PAID `, width: 130 },
 	{ field: "balance", headerName: "Balance", type: "number", width: 90 },
 	{ field: "tix", headerName: "TIX", width: 90 },
 	{ field: "cos", headerName: "COs", type: "number", width: 90 },
 	{ field: "start", headerName: "Start", type: "number", width: 90 },
-
-	// {
-	// 	field: "fullName",
-	// 	headerName: "Full name",
-	// 	description: "This column has a value getter and is not sortable.",
-	// 	sortable: false,
-	// 	width: 160,
-	// 	valueGetter: (params) =>
-	// 		`${params.row.firstName || ""} ${params.row.lastName || ""}`,
-	// },
 ];
 
 // use map to generate rows and col proable 2d array and change values to state
@@ -76,35 +66,20 @@ const rows = [
 ];
 
 export const Grid = () => {
-	// const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
-	// const theme = React.useMemo(
-	// 	() =>
-	// 		createTheme({
-	// 			palette: {
-	// 				mode: prefersDarkMode ? "dark" : "light",
-	// 			},
-	// 		}),
-	// 	[prefersDarkMode]
-	// );
-
-	// const theme = createTheme();
-
 	return (
-		<div>
-			<React.Fragment>
+		<div className="flex-container">
+			<div className="item">
 				<label>Tickets</label>
-				{/* <ThemeProvider theme={theme.spacing(2)}> */}
-				<Button variant="contained" color="primary" sx={{ borderRadius: 28 }}>
-					{" "}
-					+ Ticket
-				</Button>
-				{/* </ThemeProvider> */}
-			</React.Fragment>
+				<React.Fragment className="">
+					<Button variant="contained" color="primary" sx={{ borderRadius: 28 }}>
+						+ Ticket
+					</Button>
+				</React.Fragment>
+			</div>
 
-			<TableButtons />
+			<div className="item">
+				<TableButtons />
 
-			<div>
 				<DataGrid
 					style={{ height: 300, width: "100%" }}
 					rows={rows}

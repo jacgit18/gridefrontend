@@ -1,4 +1,36 @@
 
-.container {
-    display: flexbox;
-    }
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.item{
+width: 850px;
+height: 40px;
+margin: 10px;
+
+background-color: rebeccapurple;
+/* float:left; */
+}
+
+
+.flex-container{
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    /*always on main axis  */
+    justify-content: center;
+    /*always on cross axis  */
+    align-items: center;
+}
+
+
+/* .flex-container::after{
+
+content: "";
+clear: both;
+display: block;
+
+} */
