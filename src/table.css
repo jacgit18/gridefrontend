@@ -15,6 +15,12 @@ background-color: rebeccapurple;
 /* float:left; */
 }
 
+.lb {
+
+    justify-content: space-around;  
+
+}
+
 
 .flex-container{
     height: 700px;

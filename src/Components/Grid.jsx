@@ -69,7 +69,7 @@ export const Grid = () => {
 	return (
 		<div className="flex-container">
 			<div className="item">
-				<label>Tickets</label>
+				<label className="item">Tickets</label>
 				<React.Fragment className="">
 					<Button variant="contained" color="primary" sx={{ borderRadius: 28 }}>
 						+ Ticket
